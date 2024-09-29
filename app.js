@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const route = require('./routes/users');
 const walletRoute = require('./routes/wallets')
 const transactionPinRoute = require('./routes/transactionPins');
