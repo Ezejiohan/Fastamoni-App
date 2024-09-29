@@ -3,7 +3,6 @@ const { signUp,
     login
 } = require('../controller/user');
    
-
 const route = express.Router();
 
 route.post('/register', (signUp));
