@@ -6,6 +6,7 @@ const transactionPinRoute = require('./routes/transactionPins');
 const donationRoute = require('./routes/donations');
 const app = express();
 
+app.use(cors('*'));
 const {notFound} = require('./middleware/notFound');
 const errorHandlerMiddleware = require('./middleware/errorHandler');
 
