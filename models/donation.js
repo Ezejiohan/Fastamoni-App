@@ -1,34 +1,40 @@
 const mongoose = require('mongoose');
 
 const donationSchema = new mongoose.Schema({
-    donor_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User', 
-        required: true 
+    donor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
-    recipient_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User', 
-        required: true 
+    recipient: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
-    amount: { 
-        type: mongoose.Types.Decimal128, 
-        required: true 
+    donor_wallet_id: {
+        type: mongoose.Schema.Types.ObjectId,  
+        required: true,
+        ref: 'Wallet'
     },
-    reference: { 
-        type: String, 
-        required: true, 
-        unique: true 
+    recipient_wallet_id: {
+        type: mongoose.Schema.Types.ObjectId,  
+        required: true,
+        ref: 'Wallet'
     },
-    status: { 
-        type: String, 
-        default: 'pending' 
+    amount: {
+        type: mongoose.Types.Decimal128,
+        default: 0.0,
+        required: true
     },
-    created_at: { 
-        type: Date, 
-        default: Date.now 
+    message: {
+        type: String
     },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 const Donation = mongoose.model('Donation', donationSchema);
+
 module.exports = Donation;

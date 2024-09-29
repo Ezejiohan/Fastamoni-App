@@ -2,7 +2,7 @@ const express = require('express');
 const route = require('./routes/users');
 const walletRoute = require('./routes/wallets')
 const transactionPinRoute = require('./routes/transactionPins');
-const transactionRoute = require('./routes/transactions');
+const donationRoute = require('./routes/donations');
 const app = express();
 
 const {notFound} = require('./middleware/notFound');
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', route);
 app.use('/', walletRoute);
 app.use('/', transactionPinRoute);
-app.use('/', transactionRoute);
+app.use('/', donationRoute);
 app.use(notFound);
 app.use(errorHandlerMiddleware);
 

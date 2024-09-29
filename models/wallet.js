@@ -24,10 +24,14 @@ const walletSchema = new mongoose.Schema({
         type: String,
         enum: ['active', 'frozen', 'deleted' ],
         default: 'active'
-    }
+    },
+    pin: {
+        type: String,
+        required: true
+    },
 }, {
     timestamps: true,
-    tableName: 'accounts',
+    tableName: 'wallets',
     underscored: true
 });
 

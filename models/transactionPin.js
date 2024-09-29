@@ -9,9 +9,9 @@ const transactionPinSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    account_id: {
+    wallet_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Account"
+        ref: "Wallet"
     },
     createdAt: {
         type: Date,
